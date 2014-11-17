@@ -309,6 +309,7 @@ class ServiceContainer(object):
         self.request_counts[msg.subject] += 1
         channel = ReplyChannel(msg, self)
         service_name, func_name = msg.subject.rsplit('.', 1)
+        print service_name, self.installed_interfaces
         try:
             service = self.installed_interfaces[service_name]
         except KeyError:
