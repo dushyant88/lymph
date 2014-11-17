@@ -336,6 +336,7 @@ class ServiceContainer(object):
         logger.debug('<- %s', msg)
         connection = self.connect(msg.source)
         connection.on_recv(msg)
+        print msg
         if msg.is_request():
             self.spawn(self.dispatch_request, msg)
         elif msg.is_reply():
