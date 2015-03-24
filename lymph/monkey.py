@@ -6,7 +6,7 @@ def patch():
     patch._initialized = True
 
     import gevent.monkey
-    gevent.monkey.patch_all()
+    gevent.monkey.patch_all(subprocess=True)
 
     import sys
     if sys.version_info.major < 3:
